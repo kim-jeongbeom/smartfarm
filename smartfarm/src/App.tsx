@@ -1,5 +1,6 @@
 import React from "react";
-import Navbar from "./components/Navbar"; // 경로는 너 프로젝트 구조에 맞게
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -9,10 +10,10 @@ function App() {
         <Navbar />
 
         {/* ✅ 카테고리바 + 검색창 */}
-        <div className="bg-gray-50 border-b border-gray-200 py-3">
+        <div className="bg-white border-b border-gray-400 py-3">
           <div className="max-w-7xl mx-auto flex justify-between items-center px-4">
             {/* 카테고리 목록 */}
-            <ul className="flex space-x-6 text-sm font-medium text-gray-700 style={{ gap: '3rem' }}">
+            <ul className="flex space-x-28 text-xl font-semibold text-gray-700 ">
               <li className="cursor-pointer hover:text-green-600">과일</li>
               <li className="cursor-pointer hover:text-green-600">채소</li>
               <li className="cursor-pointer hover:text-green-600">곡류</li>
@@ -25,7 +26,7 @@ function App() {
               <input
                 type="text"
                 placeholder="검색어를 입력하세요"
-                className="flex w-[400px] pl-4 pr-12 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-400"
+                className="flex w-[400px] pl-4 pr-12 py-2 border border-gray-400 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-400"
               />
               <button
                 className="absolute right-0 top-1 -translate-y-1 mx-3 bg-transparent text-gray-500 hover:text-gray-500 focus:outline-none focus:ring-0 focus:border-none"
@@ -39,7 +40,99 @@ function App() {
       </header>
 
       {/* ✅ 아래는 실제 페이지 본문 */}
-      <main>{/* 여기에 페이지 내용 들어감 */}</main>
+      <main>
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-16 py-16">
+          <ul className="flex space-x-52 text-xl font-bold text-gray-700">
+            <li className="flex flex-col items-center cursor-pointer">
+              <img src="/fruit.png" alt="과일" className="w-16 h-16 mb-2" />
+              과일
+            </li>
+            <li className="flex flex-col items-center cursor-pointer">
+              <img src="/vegetable.png" alt="채소" className="w-16 h-16 mb-2" />
+              채소
+            </li>
+            <li className="flex flex-col items-center cursor-pointer">
+              <img src="/grain.png" alt="곡류" className="w-16 h-16 mb-2" />
+              곡류
+            </li>
+            <li className="flex flex-col items-center cursor-pointer ">
+              <img src="/dairy.png" alt="유제품" className="w-16 h-16 mb-2" />
+              유제품
+            </li>
+            <li className="flex flex-col items-center cursor-pointer hover:text-green-600">
+              <img src="/etc.png" alt="기타" className="w-16 h-16 mb-2" />
+              기타
+            </li>
+          </ul>
+        </div>
+        <div className="recommend flex items-center gap-3">
+          <div className="ml-20 text-4xl font-bold">실시간 상품 추천</div>
+          <button
+            className="text-xl text-gray-500 hover:bg-gray-100 border border-gray-700 px-6 py-4 rounded-lg"
+            aria-label="더보기"
+          >
+            더보기+
+          </button>
+        </div>
+        <div className="flex py-32 items-center justify-between">
+          <div className="ml-20 text-4xl font-bold">상품정보</div>
+          <ul className="text-xl rounded mr-28 underline">
+            <li className="cursor-pointer hover:text-gray-600">더보기</li>
+          </ul>
+        </div>
+        <div className="flex justify-between">
+          <p className="ml-20 w-[500px] h-60 bg-sky-100 shadow p-4 ">
+            <div className="ml-5">
+              <div className="text-3xl font-bold leading-loose">고객센터</div>
+              <div className="text-blue-900 text-5xl font-extrabold">
+                1577-1577
+              </div>
+              <div className="text-xl text-black font-bold leading-loose">
+                운영시간
+              </div>
+              <div className="text-xl flex space-x-2 items-center">
+                <div className="font-semibold">상담시간</div>
+                <div className="text-xl font-bold">06:00 ~ 23:00</div>
+              </div>
+              <div className="font-semibold leading-loose">
+                (주말 상담 가능)
+              </div>
+            </div>
+          </p>
+          <div className="flex-1 ml-10 max-w-[500px]">
+            {/* 제목 + 더보기 버튼 */}
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-3xl font-extrabold">
+                공지사항 <span>📣</span>
+              </h2>
+              <button className="text-lg underline">더보기</button>
+            </div>
+
+            {/* 공지 목록 */}
+            <ul className="space-y-1">
+              <li className="flex justify-between text-lg border-b pb-1">
+                <span>1111 </span>
+                <span className="text-gray-500">2025-07-21</span>
+              </li>
+              <li className="flex justify-between text-lg border-b pb-1">
+                <span>2222</span>
+                <span className="text-gray-500">2025-07-18</span>
+              </li>
+              <li className="flex justify-between text-lg border-b pb-1">
+                <span>3333 </span>
+                <span className="text-gray-500">2025-07-09</span>
+              </li>
+              <li className="flex justify-between text-lg">
+                <span>4444</span>
+                <span className="text-gray-500">2025-06-24</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </main>
+
+      {/* ✅ 푸터 */}
+      <Footer />
     </div>
   );
 }
