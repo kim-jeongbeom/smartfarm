@@ -6,7 +6,7 @@ const Navbar = () => {
       <div className="w-full py-4 flex justify-between items-center">
 
         {/* 로고 영역: 텍스트 or 이미지 */}
-        <div className="flex items-center space-x-3">
+        <div className="ml-10 flex items-center space-x-3">
           <img
             src="/src/assets/logo.png"
             alt="Bum's 농산물가게"
@@ -21,7 +21,7 @@ const Navbar = () => {
           <li className="hover:text-green-600 cursor-pointer">사업소개</li>
           <li className="hover:text-green-600 cursor-pointer">제품정보</li>
           <li className="hover:text-green-600 cursor-pointer">고객센터</li>
-          <li className="hover:text-green-600 cursor-pointer">문의하기</li>
+          <li className="hover:text-green-600 cursor-pointer">공지사항</li>
         </ul>
 
         {/* 로그인/회원가입 버튼 */}
