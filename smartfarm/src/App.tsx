@@ -1,13 +1,15 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+import LoginPage from "./pages/LoginPages";
+import SignUpPage from "./pages/SignUpPages";
 
-function App() {
+function HomePage() {
   return (
     <div>
       {/* ✅ 상단 바 + 카테고리바 */}
       <header>
-        <Navbar />
 
         {/* ✅ 카테고리바 + 검색창 */}
         <div className="bg-white border-b border-gray-400 py-3">
@@ -150,9 +152,23 @@ function App() {
         </div>
       </main>
 
-      {/* ✅ 푸터 */}
-      <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

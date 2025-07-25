@@ -6,7 +6,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-100 text-gray-700 text-sm mt-12 border-t border-gray-200">
+    <footer className="bg-gray-100 text-gray-700 text-sm border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 py-10 space-y-6">
         {/* 상단 정보 */}
         <div className="top space-y-3">
