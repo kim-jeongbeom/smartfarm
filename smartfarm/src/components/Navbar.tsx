@@ -13,7 +13,7 @@ const Navbar = () => {
               alt="Bum's 농산물가게"
               style={{ height: "70px", width: "auto" }}
             />
-            <span className="text-4xl font-bold leading-none text-gray-800">
+            <span className="text-4xl font-bold leading-none text-green-800">
               Bum's 농산물가게
             </span>
           </div>
@@ -24,11 +24,24 @@ const Navbar = () => {
           className="flex space-x-3 text-xl font-medium text-gray-800"
           style={{ gap: "4rem" }}
         >
-          <li className="hover:text-green-600 cursor-pointer">HOME</li>
+          <li>
+            <Link
+              to="/"
+              className="text-gray-800 visited:text-gray-800 hover:text-green-600 cursor-pointer"
+            >
+              HOME
+            </Link>
+          </li>
           <li className="hover:text-green-600 cursor-pointer">사업소개</li>
           <li className="hover:text-green-600 cursor-pointer">제품정보</li>
           <li className="hover:text-green-600 cursor-pointer">고객센터</li>
-          <li className="hover:text-green-600 cursor-pointer">공지사항</li>
+          <li>
+            <Link
+              to="/notice"
+              className="text-gray-800 visited:text-gray-800 hover:text-green-600 cursor-pointer"
+              >공지사항
+              </Link>
+          </li>
         </ul>
 
         {/* 로그인/회원가입 버튼 */}

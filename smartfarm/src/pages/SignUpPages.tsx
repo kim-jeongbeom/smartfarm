@@ -18,7 +18,7 @@ export default function SignupPage() {
   return (
     <div className="min-h-screen bg-white flex items-center justify-center px-4">
       <form onSubmit={handleSubmit} className="w-full max-w-md space-y-6">
-        <h1 className="text-2xl font-bold text-black">회원가입</h1>
+        <h1 className="text-3xl font-bold text-black">회원가입</h1>
 
         {/* 이메일 */}
         <div className="flex items-center border-b border-gray-300 py-2">
@@ -94,7 +94,7 @@ export default function SignupPage() {
           className="w-full bg-green-500 text-white font-semibold py-3 rounded cursor-not-allowed"
           disabled
         >
-          회원가입
+          회 원 가 입
         </button>
       </form>
     </div>

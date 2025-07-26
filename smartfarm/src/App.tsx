@@ -1,16 +1,16 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { Route, BrowserRouter, Routes } from "react-router-dom";
+import { Route, BrowserRouter, Routes, Link } from "react-router-dom";
 import LoginPage from "./pages/LoginPages";
 import SignUpPage from "./pages/SignUpPages";
+import NoticePage from "./pages/NoticePages";
 
 function HomePage() {
   return (
     <div>
       {/* ✅ 상단 바 + 카테고리바 */}
       <header>
-
         {/* ✅ 카테고리바 + 검색창 */}
         <div className="bg-white border-b border-gray-400 py-3">
           <div className="max-w-7xl mx-auto flex justify-between items-center px-4">
@@ -125,33 +125,40 @@ function HomePage() {
                 공지사항 <span>📢</span>
               </h2>
               <ul className="text-xl rounded mr-28 underline">
-                <li className="cursor-pointer hover:text-gray-600">더보기</li>
+                <li>
+                  <Link
+                    to="/notice"
+                    className="text-gray-800 visited:text-gray-800 hover:text-green-600 cursor-pointer"
+                  >
+                    더보기
+                  </Link>
+                </li>
               </ul>
             </div>
 
             {/* 공지 목록 */}
             <ul className="space-y-1 px-1 mr-20">
               <li className="flex justify-between text-lg border-b pb-1">
-                <span>1111 </span>
+                <span>공지입니다. </span>
                 <span className="text-gray-500">2025-07-21</span>
               </li>
               <li className="flex justify-between text-lg border-b pb-1">
-                <span>2222</span>
+                <span>공지입니다. </span>
                 <span className="text-gray-500">2025-07-18</span>
               </li>
               <li className="flex justify-between text-lg border-b pb-1">
-                <span>3333 </span>
+                <span>공지입니다. </span>
                 <span className="text-gray-500">2025-07-09</span>
               </li>
               <li className="flex justify-between text-lg">
-                <span>4444</span>
+                <span>공지입니다. </span>
                 <span className="text-gray-500">2025-06-24</span>
               </li>
             </ul>
           </div>
         </div>
+        <div className="h-28" />
       </main>
-
     </div>
   );
 }
@@ -165,6 +172,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/notice" element={<NoticePage />} />
         </Routes>
         <Footer />
       </div>
