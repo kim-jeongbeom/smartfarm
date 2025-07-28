@@ -9,7 +9,7 @@ const Navbar = () => {
         <Link to="/">
           <div className="ml-10 flex items-center space-x-3">
             <img
-              src="/src/assets/logo.png"
+              src="/src/assets/logo2.png"
               alt="Bum's 농산물가게"
               style={{ height: "70px", width: "auto" }}
             />

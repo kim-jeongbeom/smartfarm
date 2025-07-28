@@ -7,9 +7,9 @@ interface Notice {
 }
 
 const dummyData: Notice[] = [
-  { id: 20, title: "공지입니다.", date: "2015.11.24" },
-  { id: 19, title: "공지입니다.", date: "2015.11.11" },
-  { id: 18, title: "공지입니다.", date: "2015.01.12" },
+  { id: 20, title: "123.", date: "2015.11.24" },
+  { id: 19, title: "456.", date: "2015.11.11" },
+  { id: 18, title: "789.", date: "2015.01.12" },
   { id: 17, title: "공지입니다.", date: "2015.01.12" },
   { id: 16, title: "공지입니다.", date: "2015.01.07" },
   { id: 15, title: "공지입니다.", date: "2015.01.07" },

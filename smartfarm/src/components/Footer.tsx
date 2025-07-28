@@ -15,7 +15,7 @@ const Footer = () => {
               src="/src/assets/logo.png"
               alt="KAFB2B 농수산물 온라인도매시장"
               className="h-10 mb-6"
-            />
+            /> 
           </div>
           <address className="not-italic">
             (11111) 경기도 평택시 , 1층
