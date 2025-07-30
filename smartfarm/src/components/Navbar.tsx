@@ -20,29 +20,19 @@ const Navbar = () => {
         </Link>
 
         {/* 메뉴 항목 */}
-        <ul
-          className="flex space-x-3 text-xl font-medium text-gray-800"
-          style={{ gap: "4rem" }}
-        >
-          <li>
-            <Link
-              to="/"
-              className="text-gray-800 visited:text-gray-800 hover:text-green-600 cursor-pointer"
-            >
-              HOME
-            </Link>
-          </li>
-          <li className="hover:text-green-600 cursor-pointer">사업소개</li>
-          <li className="hover:text-green-600 cursor-pointer">제품정보</li>
-          <li className="hover:text-green-600 cursor-pointer">고객센터</li>
-          <li>
-            <Link
-              to="/notice"
-              className="text-gray-800 visited:text-gray-800 hover:text-green-600 cursor-pointer"
-              >공지사항
-              </Link>
-          </li>
-        </ul>
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="검색어를 입력하세요"
+            className="flex w-[500px] pl-4 pr-12 py-2 border border-gray-400 rounded-full focus:outline-none focus:ring-1 focus:ring-gray-600"
+          />
+          <ul
+            className="absolute right-1 top-3 -translate-y-1 mx-3 bg-transparent text-gray-500 hover:text-gray-500 cursor-pointer focus:outline-none focus:ring-0 focus:border-none"
+            aria-label="검색"
+          >
+            🔍
+          </ul>
+        </div>
 
         {/* 로그인/회원가입 버튼 */}
         <div className="space-x-6 mr-8">

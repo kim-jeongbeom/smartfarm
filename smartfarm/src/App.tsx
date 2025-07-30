@@ -15,7 +15,40 @@ function HomePage() {
         <div className="bg-white border-b border-gray-400 py-3">
           <div className="max-w-7xl mx-auto flex justify-between items-center px-4">
             {/* 카테고리 목록 */}
-            <ul className="flex space-x-28 text-xl font-semibold text-gray-700 ">
+            <ul className="flex items-center text-xl font-bold text-black space-x-32">
+              {/* 카테고리 버튼 + 드롭다운 전체를 그룹화 */}
+              <li className="relative group">
+                {/* 메인 카테고리 버튼 */}
+                <div className="cursor-pointer hover:bg-gray-100 flex items-center p-3 rounded-md">
+                  <img
+                    src="/src/assets/category.png"
+                    alt="카테고리 아이콘"
+                    className="h-[30px] w-auto mr-2"
+                  />
+                  <span>카테고리</span>
+                </div>
+
+                {/* 드롭다운 메뉴 */}
+                <ul className="absolute top-full left-0 mt-2 w-40 bg-white shadow-lg rounded-md hidden group-hover:block group-hover:opacity-100 opacity-0 transition-opacity duration-200 z-10">
+                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                    과일
+                  </li>
+                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                    채소
+                  </li>
+                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                    곡류
+                  </li>
+                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                    유제품
+                  </li>
+                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                    기타
+                  </li>
+                </ul>
+              </li>
+
+              {/* 나머지 카테고리들 */}
               <li className="cursor-pointer hover:text-green-600">과일</li>
               <li className="cursor-pointer hover:text-green-600">채소</li>
               <li className="cursor-pointer hover:text-green-600">곡류</li>
@@ -24,19 +57,6 @@ function HomePage() {
             </ul>
 
             {/* 검색창 */}
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="검색어를 입력하세요"
-                className="flex w-[350px] pl-4 pr-12 py-2 border border-gray-400 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-400"
-              />
-              <ul
-                className="absolute right-1 top-3 -translate-y-1 mx-3 bg-transparent text-gray-500 hover:text-gray-500 cursor-pointer focus:outline-none focus:ring-0 focus:border-none"
-                aria-label="검색"
-              >
-                🔍
-              </ul>
-            </div>
           </div>
         </div>
       </header>
@@ -48,45 +68,45 @@ function HomePage() {
             <li className="flex flex-col items-center cursor-pointer">
               <img
                 src="icons/fruit.png"
-                alt="과일"
+                alt="과 일"
                 className="w-16 h-16 mb-2"
               />
-              과일
+              과 일
             </li>
             <li className="flex flex-col items-center cursor-pointer">
               <img
                 src="icons/vegetable.png"
-                alt="채소"
+                alt="채 소"
                 className="w-16 h-16 mb-2"
               />
-              채소
+              채 소
             </li>
             <li className="flex flex-col items-center cursor-pointer">
               <img
                 src="icons/grain.png"
-                alt="곡류"
+                alt="곡 류"
                 className="w-16 h-16 mb-2"
               />
-              곡류
+              곡 류
             </li>
             <li className="flex flex-col items-center cursor-pointer ">
               <img
                 src="icons/dairy.png"
-                alt="유제품"
+                alt="유 제 품"
                 className="w-16 h-16 mb-2"
               />
-              유제품
+              유 제 품
             </li>
             <li className="flex flex-col items-center cursor-pointer hover:text-green-600">
               <img src="icons/etc.png" alt="기타" className="w-16 h-16 mb-2" />
-              기타
+              기 타
             </li>
           </ul>
         </div>
         <div className="recommend flex items-center gap-3">
-          <div className="ml-20 text-5xl font-bold">실시간 상품 추천</div>
+          <div className="ml-20 text-4xl font-bold">실시간 상품 추천</div>
           <button
-            className="text-xl text-gray-500 hover:bg-gray-100 border border-gray-700 px-6 py-4 rounded-lg"
+            className="text-xl text-gray-500 hover:bg-gray-100 border border-gray-700 px-5 py-4 rounded-lg"
             aria-label="더보기"
           >
             더보기+
@@ -94,7 +114,7 @@ function HomePage() {
         </div>
 
         <div className="flex py-32 items-center justify-between">
-          <div className="ml-20 text-5xl font-bold">상품정보</div>
+          <div className="ml-20 text-4xl font-bold">상품정보</div>
           <ul className="text-xl rounded mr-28 underline">
             <li className="cursor-pointer hover:text-gray-600">더보기</li>
           </ul>
