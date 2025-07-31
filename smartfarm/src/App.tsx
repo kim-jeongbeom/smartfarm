@@ -5,6 +5,11 @@ import { Route, BrowserRouter, Routes, Link } from "react-router-dom";
 import LoginPage from "./pages/LoginPages";
 import SignUpPage from "./pages/SignUpPages";
 import NoticePage from "./pages/NoticePages";
+import FruitPage from "./pages/Fruits";
+import VegetablePage from "./pages/Vegetables";
+import DairyPage from "./pages/Dairys";
+import GrainPage from "./pages/Grains";
+
 
 function HomePage() {
   return (
@@ -12,14 +17,13 @@ function HomePage() {
       {/* ✅ 상단 바 + 카테고리바 */}
       <header>
         {/* ✅ 카테고리바 + 검색창 */}
-        <div className="bg-white border-b border-gray-400 py-3">
+        <div className="bg-white border-b border-gray-400 py-3 relative">
           <div className="max-w-7xl mx-auto flex justify-between items-center px-4">
             {/* 카테고리 목록 */}
-            <ul className="flex items-center text-xl font-bold text-black space-x-32">
-              {/* 카테고리 버튼 + 드롭다운 전체를 그룹화 */}
+            <ul className="flex items-center text-2xl font-bold text-black space-x-32">
+              {/* ✅ 카테고리 버튼 (드롭다운 포함) */}
               <li className="relative group">
-                {/* 메인 카테고리 버튼 */}
-                <div className="cursor-pointer hover:bg-gray-100 flex items-center p-3 rounded-md">
+                <div className="cursor-pointer flex items-center p-3 rounded-md">
                   <img
                     src="/src/assets/category.png"
                     alt="카테고리 아이콘"
@@ -28,78 +32,94 @@ function HomePage() {
                   <span>카테고리</span>
                 </div>
 
-                {/* 드롭다운 메뉴 */}
-                <ul className="absolute top-full left-0 mt-2 w-40 bg-white shadow-lg rounded-md hidden group-hover:block group-hover:opacity-100 opacity-0 transition-opacity duration-200 z-10">
-                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                    과일
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                    채소
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                    곡류
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                    유제품
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                    기타
-                  </li>
-                </ul>
+                {/* ▼ 드롭다운 메뉴 */}
+                <div className="absolute top-full left-0 mt-1-[-1px] w-48 bg-white border shadow-md rounded-md hidden group-hover:block z-50 text-base">
+                  <Link to="/fruits">
+                    <li className="px-4 py-2 hover:bg-green-100 cursor-pointer">
+                      과일
+                    </li>
+                  </Link>
+                  <Link to="/vegetables">
+                    <li className="px-4 py-2 hover:bg-green-100 cursor-pointer">
+                      채소
+                    </li>
+                  </Link>
+                  <Link to="/grains">
+                    <li className="px-4 py-2 hover:bg-green-100 cursor-pointer">
+                      곡류
+                    </li>
+                  </Link>
+                  <Link to="/dairys">
+                    <li className="px-4 py-2 hover:bg-green-100 cursor-pointer">
+                      유제품
+                    </li>
+                  </Link>
+                </div>
               </li>
 
-              {/* 나머지 카테고리들 */}
-              <li className="cursor-pointer hover:text-green-600">과일</li>
-              <li className="cursor-pointer hover:text-green-600">채소</li>
-              <li className="cursor-pointer hover:text-green-600">곡류</li>
-              <li className="cursor-pointer hover:text-green-600">유제품</li>
-              <li className="cursor-pointer hover:text-green-600">기타</li>
+              {/* ✅ 기존 버튼들 - 그대로 유지 */}
+              <li className="cursor-pointer hover:text-green-600">
+                <Link to="/fruits">과일</Link>
+              </li>
+              <li className="cursor-pointer hover:text-green-600">
+                <Link to="/vegetables">채소</Link>
+              </li>
+              <li className="cursor-pointer hover:text-green-600">
+                <Link to="/grains">곡류</Link>
+              </li>
+              <li className="cursor-pointer hover:text-green-600">
+                <Link to="/dairys">유제품</Link>
+              </li>
             </ul>
 
-            {/* 검색창 */}
+            {/* 검색창 자리 */}
           </div>
         </div>
       </header>
 
       {/* ✅ 아래는 실제 페이지 본문 */}
       <main>
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-16 py-16">
-          <ul className="flex space-x-52 text-xl font-bold text-gray-700">
-            <li className="flex flex-col items-center cursor-pointer">
-              <img
-                src="icons/fruit.png"
-                alt="과 일"
-                className="w-16 h-16 mb-2"
-              />
-              과 일
+        <div className="max-w-7xl mx-auto flex justify-center items-center px-16 py-16">
+          <ul className="flex space-x-56 text-2xl font-bold text-gray-700">
+            <li className="flex flex-col items-center cursor-pointer hover:text-green-600">
+              <Link to="/fruits" className="flex flex-col items-center">
+                <img
+                  src="icons/fruit.png"
+                  alt="과 일"
+                  className="w-16 h-16 mb-2"
+                />
+                과 일
+              </Link>
             </li>
             <li className="flex flex-col items-center cursor-pointer">
-              <img
-                src="icons/vegetable.png"
-                alt="채 소"
-                className="w-16 h-16 mb-2"
-              />
-              채 소
+              <Link to="/vegetables" className="flex flex-col items-center">
+                <img
+                  src="icons/vegetable.png"
+                  alt="채 소"
+                  className="w-16 h-16 mb-2"
+                />
+                채 소
+              </Link>
             </li>
             <li className="flex flex-col items-center cursor-pointer">
-              <img
-                src="icons/grain.png"
-                alt="곡 류"
-                className="w-16 h-16 mb-2"
-              />
-              곡 류
+              <Link to="/grains" className="flex flex-col items-center">
+                <img
+                  src="icons/grain.png"
+                  alt="곡 류"
+                  className="w-16 h-16 mb-2"
+                />
+                곡 류
+              </Link>
             </li>
             <li className="flex flex-col items-center cursor-pointer ">
-              <img
-                src="icons/dairy.png"
-                alt="유 제 품"
-                className="w-16 h-16 mb-2"
-              />
-              유 제 품
-            </li>
-            <li className="flex flex-col items-center cursor-pointer hover:text-green-600">
-              <img src="icons/etc.png" alt="기타" className="w-16 h-16 mb-2" />
-              기 타
+              <Link to="/dairys" className="flex flex-col items-center">
+                <img
+                  src="icons/dairy.png"
+                  alt="유 제 품"
+                  className="w-16 h-16 mb-2"
+                />
+                유 제 품
+              </Link>
             </li>
           </ul>
         </div>
@@ -193,6 +213,10 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/notice" element={<NoticePage />} />
+          <Route path="/fruits" element={<FruitPage />} />
+          <Route path="/vegetables" element={<VegetablePage />} />
+          <Route path="/grains" element={<GrainPage />} />
+          <Route path="/dairys" element={<DairyPage />} />
         </Routes>
         <Footer />
       </div>

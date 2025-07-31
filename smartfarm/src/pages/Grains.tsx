@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Fruits() {
+export default function Grains() {
   return (
     <div className="max-w-5xl mx-auto p-6">
       {/* 상품명 */}
@@ -10,7 +10,7 @@ export default function Fruits() {
         {/* 이미지 */}
         <div className="md:w-1/2">
           <img
-            src="icons/apple.png"
+            src="icons/grain.png"
             alt="신선한 사과"
             className="w-full rounded-lg shadow"
           />
