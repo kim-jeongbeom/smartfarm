@@ -91,7 +91,7 @@ export default function SignupPage() {
         {/* 회원가입 버튼 */}
         <button
           type="submit"
-          className="w-full bg-green-500 text-white font-semibold py-3 rounded cursor-not-allowed"
+          className="w-full bg-green-400 text-white font-semibold py-3 rounded cursor-not-allowed"
           disabled
         >
           회 원 가 입

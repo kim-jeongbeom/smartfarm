@@ -53,7 +53,7 @@ export default function LoginPage() {
         {/* 로그인 버튼 */}
         <button
           type="submit"
-          className="mt-6 w-full bg-green-500 text-white tracking-widest py-3 rounded hover:bg-green-400 transition"
+          className="mt-6 w-full bg-green-400 text-white tracking-widest py-3 rounded hover:bg-green-300 transition"
         >
           L O G I N
         </button>
