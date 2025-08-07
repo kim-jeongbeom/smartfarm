@@ -1,17 +1,14 @@
 import { useState, useEffect } from "react";
 
-const images = [
-  "/ads/ad1.jpg",
-  "/ads/ad2.jpg",
-  "/ads/ad3.jpg",
-];
+const images = ["/ads/ad1.jpg", "/ads/ad2.jpg", "/ads/ad3.jpg"];
 
 export default function AdCarousel() {
   const [index, setIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
 
   const next = () => setIndex((prev) => (prev + 1) % images.length);
-  const prev = () => setIndex((prev) => (prev - 1 + images.length) % images.length);
+  const prev = () =>
+    setIndex((prev) => (prev - 1 + images.length) % images.length);
 
   const handlePlayPause = () => {
     setIsPlaying(!isPlaying);
@@ -55,55 +52,23 @@ export default function AdCarousel() {
       </button>
 
       {/* 하단 컨트롤 */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center space-x-4">
-        {/* 도트 네비게이션 */}
-        <div className="flex space-x-2">
-          {images.map((_, i) => (
-            <span
-              key={i}
-              onClick={() => setIndex(i)}
-              className={`w-3 h-3 rounded-full cursor-pointer ${
-                i === index ? "bg-white" : "bg-gray-400"
-              }`}
-            ></span>
-          ))}
+      <div className="absolute bottom-4 right-4 flex items-center space-x-2 z-50">
+        {/* 인덱스 숫자 표시 */}
+        <div className="text-black text-sm font-semibold bg-[#FFFFFF99] px-4 py-2 rounded-3xl">
+          {index + 1} / {images.length}
         </div>
 
         {/* 일시정지/재생 버튼 */}
         <button
           onClick={handlePlayPause}
-          className="p-2 rounded-full bg-gray-400 text-white hover:bg-gray-500 focus:outline-none"
+          className="w-10 h-10 bg-[#FFFFFF99] rounded-full flex items-center justify-center z-50 cursor-pointer"
         >
-          {isPlaying ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 9v6m4-6v6"
-              />
-            </svg>
+          {!isPlaying ? (
+            // 일시정지 아이콘
+            <div className="">⏸</div>
           ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 3l14 9-14 9V3z"
-              />
-            </svg>
+            // 재생 아이콘
+            <div className="">▶</div>
           )}
         </button>
       </div>

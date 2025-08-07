@@ -83,9 +83,7 @@ function HomePage() {
 
       {/* ✅ 아래는 실제 페이지 본문 */}
       <main>
-        <div className="pt-10">
           <AdCarousel />
-        </div>
         <div className="max-w-7xl mx-auto flex justify-center items-center px-16 py-16">
           <ul className="flex space-x-60 text-2xl font-bold text-gray-700">
             <li className="flex flex-col items-center cursor-pointer hover:text-green-600">
