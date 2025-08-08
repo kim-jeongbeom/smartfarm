@@ -47,6 +47,7 @@ export default function Fruits() {
         </div>
       </div>
 
+
       {/* 리뷰 또는 추천 상품 등 추가 영역 */}
     </div>
   );
