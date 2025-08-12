@@ -32,7 +32,7 @@ export default function AdCarousel() {
             key={i}
             src={src}
             alt={`banner-${i}`}
-            className="w-full h-full flex-shrink-0 object-contain"
+            className="w-full h-full flex-shrink-0 object-cover"
           />
         ))}
       </div>
